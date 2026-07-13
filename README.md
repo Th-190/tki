@@ -1,20 +1,22 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 📁 مجلد صور المشاريع - Project Images Folder
 
-# Run and deploy your AI Studio app
+ضع صور مشاريعك هنا. استخدم **نفس الاسم والامتداد** الموجود في الموقع:
 
-This contains everything you need to run your app locally.
+| اسم الملف | المشروع |
+|-----------|---------|
+| `Aether.png` | إيثير كلاود |
+| `rasha_flow_mockup_1783849420102.jpg` | رشا فلو |
+| `karbala_mockup_1783849434256.png` | تطبيق كربلاء |
+| `market_nexus_mockup_1783849449558.png` | ماركت نيكسس |
+| `omni_store_mockup_1783849463233.png` | أومني ستور |
+| `cloudvault_mockup_1783849478081.jpg` | كلاود فولت |
 
-View your app in AI Studio: https://ai.studio/apps/b0399bac-0078-4545-a971-f1ab080a3530
+## 📐 المواصفات الموصى بها
+- **الأبعاد:** 1200×800 بكسل أو أعرض
+- **الصيغة:** PNG أو JPG
+- **الحجم:** أقل من 1MB لكل صورة
+- **النسبة:** 3:2 أو 16:9 للعرض الأمثل
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## ⚠️ ملاحظة مهمة
+- الامتداد مهم: `.png` ≠ `.jpg`
+- الأحرف الكبيرة مهمة على GitHub: `Aether.png` وليس `aether.png`
