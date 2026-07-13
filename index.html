@@ -233,6 +233,49 @@
             transform: translateY(0);
             filter: blur(0);
         }
+
+        /* Mobile layout fixes */
+        @media (max-width: 640px) {
+            .hero-phone-mockup {
+                width: min(100%, 16.5rem);
+                height: auto;
+                aspect-ratio: 9 / 19;
+                max-height: min(70vh, 32rem);
+            }
+
+            .exp-scene {
+                height: 15.5rem;
+            }
+
+            .contact-side-btn {
+                width: 3rem;
+                min-height: 100%;
+                align-self: stretch;
+                flex-shrink: 0;
+            }
+
+            #contact input,
+            #contact textarea {
+                font-size: 16px;
+            }
+
+            .contact-copy-btn {
+                min-width: 0;
+            }
+
+            .contact-copy-btn p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        @media (min-width: 641px) {
+            .contact-side-btn {
+                width: 3.5rem;
+                flex-shrink: 0;
+            }
+        }
     </style>
 </head>
 
@@ -336,7 +379,7 @@
     </header>
 
     <!-- Main Content Container containing all Sections -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 relative z-10">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 relative z-10 overflow-x-hidden">
 
         <!-- Hero / About Me Section -->
         <section id="about"
@@ -354,7 +397,7 @@
                 </div>
 
                 <!-- Main Intro -->
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
                     <span data-i18n="hero_greet" class="block text-slate-800 dark:text-white">Hi, I'm Taqi Hikmat</span>
                     <span data-i18n="hero_title"
                         class="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-400 font-extrabold">Software
@@ -406,7 +449,7 @@
                     class="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-transparent blur-2xl rounded-full w-72 h-72 mx-auto pointer-events-none">
                 </div>
                 <div
-                    class="relative w-72 sm:w-80 h-[500px] border-4 border-slate-900/90 dark:border-zinc-800 rounded-[48px] bg-slate-950 shadow-2xl p-3 flex flex-col justify-between overflow-hidden">
+                    class="hero-phone-mockup relative w-72 sm:w-80 sm:h-[500px] border-4 border-slate-900/90 dark:border-zinc-800 rounded-[48px] bg-slate-950 shadow-2xl p-3 flex flex-col justify-between overflow-hidden">
                     <!-- Phone Ear Speaker -->
                     <div
                         class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-slate-950 rounded-b-2xl border-x border-b border-zinc-850 flex items-center justify-center gap-2 z-20">
@@ -494,7 +537,7 @@
             <div class="text-center space-y-3 mb-16">
                 <p class="text-xs font-bold tracking-widest text-indigo-500 dark:text-indigo-400 uppercase"
                     data-i18n="exp_tag">What I Do</p>
-                <h2 data-i18n="exp_title" class="text-3xl sm:text-4xl font-extrabold tracking-tight">Core Expertise</h2>
+                <h2 data-i18n="exp_title" class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Core Expertise</h2>
                 <p data-i18n="exp_subtitle"
                     class="text-sm sm:text-base text-slate-500 dark:text-zinc-400 max-w-lg mx-auto">
                     Highlighting the technical edge that defines my digital orchestration.
@@ -917,7 +960,7 @@
         <!-- Portfolio / Featured Projects Section -->
         <section id="projects" class="py-16 sm:py-24 reveal-on-scroll">
             <div class="text-center space-y-4 mb-20">
-                <h2 data-i18n="projects_title" class="text-3xl sm:text-4xl font-extrabold tracking-tight">Portfolio &
+                <h2 data-i18n="projects_title" class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Portfolio &
                     Featured Projects</h2>
                 <div class="h-1.5 w-20 bg-indigo-500 dark:bg-indigo-400 mx-auto rounded-full"></div>
                 <p data-i18n="projects_subtitle"
@@ -928,37 +971,37 @@
 
             <!-- Portfolio Project Cards -->
             <div class="space-y-16">
-                <!-- Project 1: Ofoq Company -->
+                <!-- Project 1: Aether Cloud -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center group">
                     <div class="lg:col-span-6 order-2 lg:order-1 space-y-4 sm:space-y-5">
                         <span data-i18n="proj1_cat"
-                            class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Venture
-                            / Software Agency</span>
-                        <h3 data-i18n="proj1_title" class="text-2xl sm:text-3xl font-extrabold">Ofoq Company</h3>
+                            class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Secure
+                            Cloud Platform</span>
+                        <h3 data-i18n="proj1_title" class="text-2xl sm:text-3xl font-extrabold">Aether Cloud</h3>
                         <p data-i18n="proj1_desc"
                             class="text-slate-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
-                            A software development venture specialized in building custom software and mobile
-                            applications from scratch.
+                            A secure cloud platform that encrypts every file on upload and download using AES encryption
+                            and SHA-512 integrity verification.
                         </p>
                         <div class="flex flex-wrap gap-2 text-xs font-mono text-zinc-500 py-1">
                             <span
-                                class="px-2.5 py-1 rounded bg-gray-150 dark:bg-zinc-900 border border-gray-250 dark:border-zinc-800">Laravel</span>
+                                class="px-2.5 py-1 rounded bg-gray-150 dark:bg-zinc-900 border border-gray-250 dark:border-zinc-800">AES-256</span>
                             <span
-                                class="px-2.5 py-1 rounded bg-gray-150 dark:bg-zinc-900 border border-gray-250 dark:border-zinc-805">Flutter</span>
+                                class="px-2.5 py-1 rounded bg-gray-150 dark:bg-zinc-900 border border-gray-250 dark:border-zinc-805">SHA-512</span>
                             <span
-                                class="px-2.5 py-1 rounded bg-gray-150 dark:bg-zinc-905 border border-gray-250 dark:border-zinc-800">PostgreSQL</span>
+                                class="px-2.5 py-1 rounded bg-gray-150 dark:bg-zinc-905 border border-gray-250 dark:border-zinc-800">Cloud Storage</span>
                         </div>
-                        <button onclick="openModal('ofoq')"
+                        <button onclick="openModal('aether')"
                             class="inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-350 transition-colors pt-2 group-hover:translate-x-1 duration-200 auto-rtl-arrow">
                             <span data-i18n="proj_explore">Explore Project</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </button>
                     </div>
 
-                    <!-- Real Project Screenshot: Ofoq Company -->
+                    <!-- Real Project Screenshot: Aether Cloud -->
                     <div
                         class="lg:col-span-6 order-1 lg:order-2 relative rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-805/85 shadow-lg hover:shadow-xl transition-all duration-300 group/img">
-                        <img src="images/ofoq_mockup_1783849405333.jpg" alt="Ofoq Company"
+                        <img src="assets/images/Aether.png" alt="Aether Cloud"
                             class="w-full h-full object-cover min-h-[280px] max-h-[350px] group-hover/img:scale-105 transition-transform duration-500 ease-out">
                     </div>
                 </div>
@@ -970,7 +1013,7 @@
                     <!-- Real Project Screenshot: Rasha Flow -->
                     <div
                         class="lg:col-span-6 relative rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-805/85 shadow-lg hover:shadow-xl transition-all duration-300 group/img">
-                        <img src="images/rasha_flow_mockup_1783849420102.jpg"
+                        <img src="assets/images/rasha_flow_mockup_1783849420102.jpg"
                             alt="Rasha Flow - Cloud Order Tracking App"
                             class="w-full h-full object-cover min-h-[280px] group-hover/img:scale-105 transition-transform duration-500 ease-out">
                         <!-- Overlay gradient bottom for text legibility -->
@@ -1052,7 +1095,7 @@
                     <!-- Real Project Screenshot: Karbala App -->
                     <div
                         class="lg:col-span-6 order-1 lg:order-2 relative rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-805/85 shadow-lg hover:shadow-xl transition-all duration-300 group/img">
-                        <img src="images/karbala_mockup_1783849434256.jpg" alt="Karbala App"
+                        <img src="assets/images/karbala_mockup_1783849434256.png" alt="Karbala App"
                             class="w-full h-full object-cover min-h-[280px] max-h-[350px] group-hover/img:scale-105 transition-transform duration-500 ease-out">
                     </div>
                 </div>
@@ -1064,7 +1107,7 @@
                     <!-- Real Project Screenshot: MarketNexus -->
                     <div
                         class="lg:col-span-6 relative rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-805/85 shadow-lg hover:shadow-xl transition-all duration-300 group/img">
-                        <img src="images/market_nexus_mockup_1783849449558.jpg" alt="MarketNexus"
+                        <img src="assets/images/market_nexus_mockup_1783849449558.png" alt="MarketNexus"
                             class="w-full h-full object-cover min-h-[280px] max-h-[350px] group-hover/img:scale-105 transition-transform duration-500 ease-out">
                     </div>
 
@@ -1130,7 +1173,7 @@
                     <!-- Real Project Screenshot: Omni-Store -->
                     <div
                         class="lg:col-span-6 order-1 lg:order-2 relative rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-805/85 shadow-lg hover:shadow-xl transition-all duration-300 group/img">
-                        <img src="images/omni_store_mockup_1783849463233.jpg" alt="Omni-Store"
+                        <img src="assets/images/omni_store_mockup_1783849463233.png" alt="Omni-Store"
                             class="w-full h-full object-cover min-h-[280px] max-h-[350px] group-hover/img:scale-105 transition-transform duration-500 ease-out">
                     </div>
                 </div>
@@ -1139,36 +1182,36 @@
 
         <!-- Call to Action / Contact Section -->
         <section id="contact" class="py-16 sm:py-24 reveal-on-scroll">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
 
-                <!-- Intro / Text Context -->
-                <div class="lg:col-span-5 space-y-6">
-                    <h2 data-i18n="contact_title" class="text-4xl font-extrabold tracking-tight">Let's Build Together
+                <!-- Intro / Contact Channels -->
+                <div class="lg:col-span-5 space-y-6 min-w-0">
+                    <h2 data-i18n="contact_title" class="text-3xl sm:text-4xl font-extrabold tracking-tight">Let's Build Together
                     </h2>
                     <p data-i18n="contact_subtitle"
                         class="text-slate-650 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
                         Let's build your next big software asset together through Ofoq Company.
                     </p>
-                    <!-- Direct Contacts lists -->
-                    <div class="space-y-4 pt-4">
+
+                    <div class="space-y-3 sm:space-y-4 pt-2">
                         <!-- Phone & WhatsApp -->
-                        <div class="flex gap-2">
+                        <div class="contact-row flex gap-2 items-stretch">
                             <button onclick="triggerCopy('07808571484', 'notify_phone_copied')"
-                                class="flex-1 flex items-center gap-3.5 p-4 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-emerald-500/80 dark:hover:border-emerald-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-white dark:hover:bg-zinc-900/85 transition-all text-slate-805 dark:text-gray-100 group text-left">
+                                class="contact-copy-btn flex-1 flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-emerald-500/80 dark:hover:border-emerald-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-white dark:hover:bg-zinc-900/85 transition-all text-slate-805 dark:text-gray-100 group text-left min-w-0">
                                 <div
-                                    class="h-10 w-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                                    class="h-10 w-10 shrink-0 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                     <i data-lucide="phone" class="w-5 h-5"></i>
                                 </div>
-                                <div class="flex-1 text-left rtl:text-right">
+                                <div class="flex-1 min-w-0 text-left rtl:text-right">
                                     <p class="text-xs text-zinc-500 font-bold" data-i18n="contact_whatsapp_label">Phone
                                         & WhatsApp</p>
                                     <p class="text-sm font-semibold tracking-wide">07808571484</p>
                                 </div>
                                 <i data-lucide="copy"
-                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-slate-405"></i>
+                                    class="w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-slate-405"></i>
                             </button>
                             <a href="https://wa.me/9647808571484" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-14 sm:h-auto sm:w-14 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-emerald-500/80 dark:hover:border-emerald-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center transition-all group"
+                                class="contact-side-btn rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-emerald-500/80 dark:hover:border-emerald-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center transition-all group"
                                 title="Open WhatsApp Chat">
                                 <i data-lucide="message-circle"
                                     class="w-5 h-5 group-hover:scale-110 transition-transform duration-300"></i>
@@ -1176,23 +1219,23 @@
                         </div>
 
                         <!-- Personal Instagram -->
-                        <div class="flex gap-2">
+                        <div class="contact-row flex gap-2 items-stretch">
                             <button onclick="triggerCopy('@th19_', 'notify_insta_copied')"
-                                class="flex-1 flex items-center gap-3.5 p-4 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-white dark:hover:bg-zinc-905 transition-all text-slate-800 dark:text-gray-100 group text-left">
+                                class="contact-copy-btn flex-1 flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-white dark:hover:bg-zinc-905 transition-all text-slate-800 dark:text-gray-100 group text-left min-w-0">
                                 <div
-                                    class="h-10 w-10 rounded-lg bg-pink-50 dark:bg-pink-950/30 text-pink-600 dark:text-pink-400 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                                    class="h-10 w-10 shrink-0 rounded-lg bg-pink-50 dark:bg-pink-950/30 text-pink-600 dark:text-pink-400 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                     <i data-lucide="instagram" class="w-5 h-5"></i>
                                 </div>
-                                <div class="flex-1 text-left rtl:text-right">
+                                <div class="flex-1 min-w-0 text-left rtl:text-right">
                                     <p class="text-xs text-zinc-500 font-bold"
                                         data-i18n="contact_instagram_personal_label">Personal Instagram</p>
                                     <p class="text-sm font-semibold tracking-wide">@th19_</p>
                                 </div>
                                 <i data-lucide="copy"
-                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-slate-405"></i>
+                                    class="w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-slate-405"></i>
                             </button>
                             <a href="https://instagram.com/th19_" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-14 sm:h-auto sm:w-14 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-pink-500/10 dark:hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center transition-all group"
+                                class="contact-side-btn rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-pink-500/10 dark:hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center transition-all group"
                                 title="Open Instagram Profile">
                                 <i data-lucide="external-link"
                                     class="w-5 h-5 group-hover:scale-110 transition-transform duration-300"></i>
@@ -1200,72 +1243,72 @@
                         </div>
 
                         <!-- Company Instagram -->
-                        <div class="flex gap-2">
+                        <div class="contact-row flex gap-2 items-stretch">
                             <button onclick="triggerCopy('@ofoq.company', 'notify_insta_copied')"
-                                class="flex-1 flex items-center gap-3.5 p-4 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-white dark:hover:bg-zinc-900 transition-all text-slate-800 dark:text-gray-105 group text-left">
+                                class="contact-copy-btn flex-1 flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-white dark:hover:bg-zinc-900 transition-all text-slate-800 dark:text-gray-105 group text-left min-w-0">
                                 <div
-                                    class="h-10 w-10 rounded-lg bg-pink-50 dark:bg-pink-950/30 text-pink-600 dark:text-pink-400 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                                    class="h-10 w-10 shrink-0 rounded-lg bg-pink-50 dark:bg-pink-950/30 text-pink-600 dark:text-pink-400 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                     <i data-lucide="instagram" class="w-5 h-5"></i>
                                 </div>
-                                <div class="flex-1 text-left rtl:text-right">
+                                <div class="flex-1 min-w-0 text-left rtl:text-right">
                                     <p class="text-xs text-zinc-500 font-bold"
                                         data-i18n="contact_instagram_company_label">Company Instagram</p>
                                     <p class="text-sm font-semibold tracking-wide">@ofoq.company</p>
                                 </div>
                                 <i data-lucide="copy"
-                                    class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-slate-405"></i>
+                                    class="w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-slate-405"></i>
                             </button>
                             <a href="https://instagram.com/ofoq.company" target="_blank" rel="noopener noreferrer"
-                                class="w-12 h-14 sm:h-auto sm:w-14 rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-pink-500/10 dark:hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center transition-all group"
+                                class="contact-side-btn rounded-xl border border-gray-200/80 dark:border-zinc-800/80 hover:border-pink-500/80 dark:hover:border-pink-500/50 bg-white/50 dark:bg-zinc-900/40 hover:bg-pink-500/10 dark:hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center transition-all group"
                                 title="Open Ofoq Instagram Page">
                                 <i data-lucide="external-link"
                                     class="w-5 h-5 group-hover:scale-110 transition-transform duration-300"></i>
                             </a>
                         </div>
                     </div>
-
-                    <!-- High fidelity form layout client side logic -->
-                    <div
-                        class="lg:col-span-7 bg-white dark:bg-zinc-900/60 border border-gray-200 dark:border-zinc-800/85 rounded-3xl p-6 sm:p-8 shadow-xl glass-card">
-                        <form id="contact-form" class="space-y-5">
-                            <div class="space-y-1.5">
-                                <label for="form-name"
-                                    class="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-widest"
-                                    data-i18n="form_name_lbl">Your Name</label>
-                                <input type="text" id="form-name" required
-                                    class="w-full px-4.5 py-3 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50/50 dark:bg-zinc-950/20 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/30 transition-all hover:bg-gray-50 dark:hover:bg-zinc-955/40"
-                                    placeholder="e.g. Ali Ahmed">
-                            </div>
-
-                            <div class="space-y-1.5">
-                                <label for="form-email"
-                                    class="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-widest"
-                                    data-i18n="form_email_lbl">Your Email</label>
-                                <input type="email" id="form-email" required
-                                    class="w-full px-4.5 py-3 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50/50 dark:bg-zinc-950/20 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/30 transition-all hover:bg-gray-50 dark:hover:bg-zinc-955/40"
-                                    placeholder="e.g. ali@domain.com">
-                            </div>
-
-                            <div class="space-y-1.5">
-                                <label for="form-msg"
-                                    class="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-widest"
-                                    data-i18n="form_msg_lbl">Message</label>
-                                <textarea id="form-msg" rows="4" required
-                                    class="w-full px-4.5 py-3 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50/50 dark:bg-zinc-950/20 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/30 transition-all hover:bg-gray-50 dark:hover:bg-zinc-955/40"
-                                    placeholder="Tell me about your project..."></textarea>
-                            </div>
-
-                            <!-- Status Notification placeholder -->
-                            <div id="form-status" class="hidden rounded-xl p-4 text-xs font-semibold"></div>
-
-                            <button type="submit" id="form-submit-btn"
-                                class="w-full py-4 rounded-xl font-extrabold text-white bg-indigo-605 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-650/20 dark:shadow-indigo-500/10 flex items-center justify-center gap-2">
-                                <span data-i18n="form_btn">Send Message</span>
-                                <i data-lucide="send" class="w-4 h-4"></i>
-                            </button>
-                        </form>
-                    </div>
                 </div>
+
+                <!-- Contact Form -->
+                <div
+                    class="lg:col-span-7 w-full min-w-0 bg-white dark:bg-zinc-900/60 border border-gray-200 dark:border-zinc-800/85 rounded-3xl p-5 sm:p-8 shadow-xl glass-card">
+                    <form id="contact-form" class="space-y-5">
+                        <div class="space-y-1.5">
+                            <label for="form-name"
+                                class="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-widest"
+                                data-i18n="form_name_lbl">Your Name</label>
+                            <input type="text" id="form-name" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50/50 dark:bg-zinc-950/20 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/30 transition-all hover:bg-gray-50 dark:hover:bg-zinc-955/40"
+                                placeholder="e.g. Ali Ahmed">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label for="form-email"
+                                class="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-widest"
+                                data-i18n="form_email_lbl">Your Email</label>
+                            <input type="email" id="form-email" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50/50 dark:bg-zinc-950/20 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/30 transition-all hover:bg-gray-50 dark:hover:bg-zinc-955/40"
+                                placeholder="e.g. ali@domain.com">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label for="form-msg"
+                                class="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-widest"
+                                data-i18n="form_msg_lbl">Message</label>
+                            <textarea id="form-msg" rows="4" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-zinc-800 bg-gray-50/50 dark:bg-zinc-950/20 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 dark:focus:ring-indigo-400/30 transition-all hover:bg-gray-50 dark:hover:bg-zinc-955/40 resize-y min-h-[7rem]"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+
+                        <div id="form-status" class="hidden rounded-xl p-4 text-xs font-semibold"></div>
+
+                        <button type="submit" id="form-submit-btn"
+                            class="w-full py-3.5 sm:py-4 rounded-xl font-extrabold text-white bg-indigo-605 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-650/20 dark:shadow-indigo-500/10 flex items-center justify-center gap-2">
+                            <span data-i18n="form_btn">Send Message</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -1289,7 +1332,7 @@
 
     <!-- Active Hover Toast Alert -->
     <div id="toast-notify"
-        class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none px-4.5 py-3 rounded-xl shadow-xl text-xs font-bold text-white bg-slate-900 dark:bg-zinc-800 border border-zinc-800/30 flex items-center gap-2">
+        class="fixed bottom-4 right-4 left-4 sm:left-auto sm:max-w-xs z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none px-4.5 py-3 rounded-xl shadow-xl text-xs font-bold text-white bg-slate-900 dark:bg-zinc-800 border border-zinc-800/30 flex items-center gap-2">
         <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
         <span id="toast-text">Copied to clipboard!</span>
     </div>
@@ -1344,10 +1387,10 @@
                 exp_c4_title: "Distraction-Free UI/UX Engineering",
                 exp_c4_desc: "Creating visual systems focused on high usability, minimal aesthetic noise, and high conversion.",
                 projects_title: "Portfolio & Featured Projects",
-                projects_subtitle: "Discover case studies from Ofoq Company and technical implementations.",
-                proj1_cat: "Venture / Software Agency",
-                proj1_title: "Ofoq Company",
-                proj1_desc: "A software development venture specialized in building custom software and mobile applications from scratch.",
+                projects_subtitle: "Discover case studies from Aether Cloud and technical implementations.",
+                proj1_cat: "Secure Cloud Platform",
+                proj1_title: "Aether Cloud",
+                proj1_desc: "A secure cloud platform that encrypts every file on upload and download using AES encryption and SHA-512 integrity verification.",
                 proj_explore: "Explore Project",
                 mock_active_assets: "Active Client Engines",
                 proj2_cat: "Cloud SaaS Order Tracking",
@@ -1422,10 +1465,10 @@
                 exp_c4_title: "هندسة واجهات وتجربة مستخدم خالية من التشتيت",
                 exp_c4_desc: "نظم بصريّة عالية الكفاءة تركز على البساطة والجمال الهادئ لتسريع مهام وتجربة عملائك.",
                 projects_title: "معرض الأعمال والمشاريع المميزة",
-                projects_subtitle: "احصل على دراسات حالة مباشرة من مشروعات شركة أفق والحلول البرمجية.",
-                proj1_cat: "منصة برمجية / شركة مستقلة",
-                proj1_title: "شركة أفق",
-                proj1_desc: "شركة تطوير برمجيات متخصصة في بناء البرمجيات المخصصة وتطبيقات الهواتف الذكية من الصفر.",
+                projects_subtitle: "احصل على دراسات حالة مباشرة من مشروعات إيثير كلاود والحلول البرمجية.",
+                proj1_cat: "منصة تخزين سحابي مشفّرة",
+                proj1_title: "إيثير كلاود",
+                proj1_desc: "منصة سحابية آمنة تشفّر جميع الملفات تلقائياً عند الرفع والاستلام باستخدام تشفير AES والتحقق من السلامة عبر SHA-512.",
                 proj_explore: "استكشف المشروع",
                 mock_active_assets: "مشاريع العملاء المفعلة",
                 proj2_cat: "نظام إدارة تتبع مطابع سحابي",
@@ -1473,18 +1516,18 @@
 
         // Project detail descriptions for dynamic Modal loading
         const projectDetails = {
-            ofoq: {
-                title: { en: "Ofoq Company", ar: "شركة أفق" },
-                cat: { en: "Venture / Software Agency", ar: "منصة برمجية / شركة مستقلة" },
+            aether: {
+                title: { en: "Aether Cloud", ar: "إيثير كلاود" },
+                cat: { en: "Secure Cloud Platform", ar: "منصة تخزين سحابي مشفّرة" },
                 challenge: {
-                    en: "Startups and businesses face challenges building complex web and mobile programs from scratch, requiring multiple hires and causing misaligned operations pipelines.",
-                    ar: "تواجه الشركات الناشئة صعوبة قياسية في بناء البرمجيات المخصصة وتطبيقات الهواتف الذكية من الصفر بطريقة متناسقة، مما يتطلب تمويلاً ضخماً وتوظيف فرق عمل متباعدة هندسياً."
+                    en: "Users need to store and share sensitive files in the cloud without risking data breaches, unauthorized access, or file tampering during upload and download.",
+                    ar: "يحتاج المستخدمون إلى تخزين ومشاركة ملفاتهم الحساسة في السحابة دون التعرض لاختراق البيانات أو الوصول غير المصرح به أو التلاعب بالملفات أثناء الرفع والاستلام."
                 },
                 solution: {
-                    en: "Complete end-to-end consulting, architecture blueprinting, full-stack Flutter clients, PHP Laravel middleware API, database load balancing, and autonomous pipeline setups.",
-                    ar: "نقدم في أفق استشارات برمجية متكاملة وهندسة حلول من الصفر. نبني تطبيقات الهواتف الذكية بـ Flutter، ونربطها بخوادم Laravel قوية ومحمية، مع ضبط قواعد بيانات PostgreSQL مرنة وسريعة الاستجابة."
+                    en: "Built a secure cloud platform that encrypts every file with AES on upload and download, and verifies file integrity using SHA-512 hashing to ensure complete privacy and tamper-proof delivery.",
+                    ar: "تم بناء منصة سحابية آمنة تشفّر جميع الملفات بتقنية AES عند الرفع والاستلام، وتتحقق من سلامة كل ملف عبر بصمة SHA-512 لضمان الخصوصية الكاملة ومنع أي تلاعب."
                 },
-                tech: ["Laravel MVC", "Flutter UI", "PostgreSQL", "SysOps Automation"]
+                tech: ["AES-256 Encryption", "SHA-512 Hashing", "Secure Cloud API", "End-to-End Protection"]
             },
             rasha: {
                 title: { en: "Rasha Flow", ar: "رشا فلو" },
@@ -1709,10 +1752,10 @@
 
             // Build Dynamic Mockup representations matching project key
             let extraGraphicHtml = '';
-            if (projectKey === 'ofoq') {
+            if (projectKey === 'aether') {
                 extraGraphicHtml = `<div class="p-4 bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100/50 dark:border-indigo-900/25 rounded-2xl flex justify-between items-center text-xs font-semibold">
-                    <span class="text-zinc-500">${translations[currentLang]['mock_active_assets']}</span>
-                    <span class="text-indigo-600 dark:text-indigo-400 font-mono">14 Active Client Systems</span>
+                    <span class="text-zinc-500">${currentLang === 'ar' ? 'حالة التشفير' : 'Encryption Status'}</span>
+                    <span class="text-indigo-600 dark:text-indigo-400 font-mono">AES-256 + SHA-512 Active</span>
                 </div>`;
             } else if (projectKey === 'rasha') {
                 extraGraphicHtml = `<div class="p-4 bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-100/30 dark:border-emerald-900/25 rounded-2xl flex justify-between items-center text-xs font-semibold">
